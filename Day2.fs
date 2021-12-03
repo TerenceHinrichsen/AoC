@@ -10,6 +10,11 @@ module Day2
 
   let input = TextFileReader.readFileContents "../../../Day2Input.txt"
 
+  let parseInput (input: seq<string>) =
+    input
+    |> Seq.map (fun row -> row.Split "")
+    |> Seq.toList
+    
   let run =
 
     let pos, depth =
