@@ -29,7 +29,6 @@ module Day6
 
     // so we know the ages can only be between 0 and 8
     // so we can keep the number per age in a map and just update it?
-
     let startingState =
       parsedInput
       |> List.groupBy id

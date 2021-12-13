@@ -22,7 +22,7 @@ module Day4
     " 2  0 12  3  7"
   ]
 
-  let input = TextFileReader.readFileContents "../../../Day3Input.txt"
+  let input = TextFileReader.readFileContents "../../../Day4Input.txt" |> Seq.toList
 
   /// each board contains a list of rows and columns - 2d array?
   type block = int * bool
@@ -36,14 +36,14 @@ module Day4
 
   let run =
     let numberSequence =
-      sampleInput
+      input
       |> List.head
       |> fun l -> l.Split(",")
       |> Seq.toList
       |> List.map int
 
     let boards =
-      sampleInput
+      input
       |> List.skip 1
       |> List.chunkBySize 6
       |> List.map (List.skip 1)
@@ -55,22 +55,81 @@ module Day4
       |> List.map (fun rowL -> (rowL, rowL |> List.transpose))
       : List<board>
 
-//    let markedBoards =
-//      numberSequence
-//      |> Seq.iter (fun number ->
-//
-//        boards
-//        |> List.map (fun board -> board |> fst |> List.map (markBlockAsFound number))
-//        |> List.map (fun board -> board |> snd |> List.map (markBlockAsFound number))
-//        ()
-// )
+    let checkIfBoardIsWinner (board: board) =
+      let (rowL, colL) = board
+      let winningRowO = rowL |> List.tryFind isWinningRow
+      let winningColO = colL |> List.tryFind isWinningRow
+      winningColO.IsSome || winningRowO.IsSome
 
+    let calculateBoardScore (board: board) =
+      let (rowL, _colL) = board
+      let rowScore =
+        rowL
+        |> List.map (fun row ->
+          row
+          |> List.filter (fun block -> not (block |> snd))
+          |> List.map (fun block -> block |> fst)
+        |> List.sum)
+        |> List.sum
+      rowScore
 
-    printfn $"The first sequence of numbers are : {numberSequence |> List.take 5}"
+    let rec markBoardsP1 (markedBoards: List<board>) (remainingNumbers: List<int>) : List<board> =
+      printfn $"No winners yet, marking next number"
+      match remainingNumbers with
+      | [] -> markedBoards
+      | [x] ->
+        printfn $"Checking {x}"
+        let newMarkedBoards =
+          markedBoards
+          |> List.map (fun board -> board |> fst |> List.map (markBlockAsFound x), (board |> snd |> List.map (markBlockAsFound x)): board)
+        let winningBoard = newMarkedBoards |> List.tryFind checkIfBoardIsWinner
+        if winningBoard.IsSome then
+          printfn $"We have a winner!! {winningBoard}"
+          let winningBoardScore = calculateBoardScore winningBoard.Value
+          printfn $"Winning score is : {winningBoardScore}"
+          newMarkedBoards
+        else newMarkedBoards
+      | x::xs ->
+        printfn $"Checking {x}"
+        let newMarkedBoards =
+          markedBoards
+          |> List.map (fun board -> board |> fst |> List.map (markBlockAsFound x), (board |> snd |> List.map (markBlockAsFound x)): board)
+        let winningBoard = newMarkedBoards |> List.tryFind checkIfBoardIsWinner
+        if winningBoard.IsSome then
+          printfn $"We have a winner!! {winningBoard}"
+          let winningBoardScore = calculateBoardScore winningBoard.Value
+          printfn $"Winning score is : {winningBoardScore}"
+          printfn $"Winning number was : {x}"
+          printfn $"Final score: {winningBoardScore * x}"
+          newMarkedBoards
+        else markBoardsP1 newMarkedBoards xs
 
-    printfn $"{boards.[0]}"
-    printfn $"{boards.[1]}"
-    printfn $"{boards.[2]}"
+    let rec markBoardsP2 (markedBoards: List<board>) (remainingNumbers: List<int>) : List<board> =
+      printfn $"No winners yet, marking next number"
+      match remainingNumbers with
+      | [] -> markedBoards
+      | [x] ->
+        printfn $"Checking {x}"
+        let newMarkedBoards =
+          markedBoards
+          |> List.map (fun board -> board |> fst |> List.map (markBlockAsFound x), (board |> snd |> List.map (markBlockAsFound x)): board)
+        newMarkedBoards
 
+      | x::xs ->
+        printfn $"Checking {x}"
+        let newMarkedBoards =
+          markedBoards
+          |> List.map (fun board -> board |> fst |> List.map (markBlockAsFound x), (board |> snd |> List.map (markBlockAsFound x)): board)
+        let winningBoard = newMarkedBoards |> List.tryFind checkIfBoardIsWinner
+        if winningBoard.IsSome then
+          printfn $"We have a winner!! {winningBoard}"
+          let winningBoardScore = calculateBoardScore winningBoard.Value
+          printfn $"Winning score is : {winningBoardScore}"
+          printfn $"Winning number was : {x}"
+          printfn $"Final score: {winningBoardScore * x}"
+          markBoardsP2 newMarkedBoards xs
+        else markBoardsP2 newMarkedBoards xs
 
-    ()
+//    markBoardsP1 boards numberSequence
+    markBoardsP2 boards numberSequence
+
