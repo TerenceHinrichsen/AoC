@@ -108,5 +108,5 @@ module Day8
 
       )
 
-    something
+    something |> ignore
     ()

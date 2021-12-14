@@ -31,4 +31,5 @@ module Day12
 
     uniquePaths
     |> id
+    |> ignore
     ()
