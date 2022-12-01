@@ -9,14 +9,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe7f65da-1a88-4b68-80e0-29103cf14896" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AoC_2021/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AoC_2022/Day1.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AoC_2022/Day1Input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AoC_2022/TextFileReader.fs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AoC_2021/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AoC_2021/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AoC_2021/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AoC_2021.sln" beforeDir="false" afterPath="$PROJECT_DIR$/AoC.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AoC.sln" beforeDir="false" afterPath="$PROJECT_DIR$/AoC.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AoC_2021.fsproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day1.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day10.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day10Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day11.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day11Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day12.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day12Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day13.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day13Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day14.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day14Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day1Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day2.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day2Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day4.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day4Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day5.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day5Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day6.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day6Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day7.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day7Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day8.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day8Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day9.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day9Input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.fs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TextFileReader.fs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +144,7 @@
       <workItem from="1639371139508" duration="2862000" />
       <workItem from="1639457376360" duration="4385000" />
       <workItem from="1639717251803" duration="619000" />
-      <workItem from="1669870674720" duration="1782000" />
+      <workItem from="1669870674720" duration="2067000" />
     </task>
     <servers />
   </component>
