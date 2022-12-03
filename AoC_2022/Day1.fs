@@ -44,8 +44,7 @@ module Day1
          |> splitBy "BREAK"
          |> List.map (fun sL ->
             sL
-            |> List.map (fun s ->
-               int s)
+            |> List.map (fun s -> int s)
             |> List.sum
          )
 

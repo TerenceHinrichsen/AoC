@@ -6,10 +6,19 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Library.fs" />
         <Compile Include="TextFileReader.fs" />
         <Compile Include="Day1.fs" />
+        <Compile Include="Day2.fs" />
+        <Compile Include="Day3.fs" />
         <Compile Include="Program.fs" />
         <Content Include="Day1Input.txt" />
+        <Content Include="Day2Input.txt" />
+        <Content Include="Day3Input.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FsToolkit.ErrorHandling" Version="4.0.0" />
     </ItemGroup>
 
 </Project>
