@@ -6,6 +6,6 @@ open AdventOfCode
 [<EntryPoint>]
 let main argv =
 
-    Day5.run
+    Day6.run
 
     0 // return an integer exit code
