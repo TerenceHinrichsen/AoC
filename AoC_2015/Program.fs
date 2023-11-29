@@ -5,8 +5,8 @@
 [<EntryPoint>]
 let main argv =
 
-    printfn "** DAY 1: "
-    Day1.run
+//    printfn "** DAY 1: "
+//    Day1.run
     printfn "** DAY 2: "
     Day2.run
 
