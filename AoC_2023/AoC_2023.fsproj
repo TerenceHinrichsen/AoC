@@ -10,15 +10,17 @@
       <Compile Include="TextFileReader.fs" />
       <Compile Include="Day1.fs" />
       <Compile Include="Day2.fs" />
+      <Compile Include="Day3.fs" />
       <Compile Include="Day4.fs" />
       <Compile Include="Day5.fs" />
       <Compile Include="Day6.fs" />
       <Compile Include="Program.fs" />
       <Content Include="Day4Input.txt" />
       <Content Include="Day1Input.txt" />
+      <Content Include="Day2Input.txt" />
+      <Content Include="Day3Input.txt" />
       <Content Include="Day5Input.txt" />
       <Content Include="Day6Input.txt" />
-      <Content Include="Day2Input.txt" />
     </ItemGroup>
 
     <ItemGroup>
