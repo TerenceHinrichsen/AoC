@@ -9,7 +9,11 @@
         <Compile Include="Library.fs" />
         <Compile Include="TextFileReader.fs" />
         <Content Include="Day1Input.txt" />
+        <Content Include="Day2Input.txt" />
+        <Content Include="Day3Input.txt" />
         <Compile Include="Day1.fs" />
+        <Compile Include="Day2.fs" />
+        <Compile Include="Day3.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
