@@ -12,14 +12,19 @@
         <Content Include="Day2Input.txt" />
         <Content Include="Day3Input.txt" />
         <Content Include="Day4Input.txt" />
+        <Content Include="Day5Input.txt" />
+        <Content Include="Day6Input.txt" />
         <Compile Include="Day1.fs" />
         <Compile Include="Day2.fs" />
         <Compile Include="Day3.fs" />
         <Compile Include="Day4.fs" />
+        <Compile Include="Day5.fs" />
+        <Compile Include="Day6.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="FSharpPlus" Version="1.6.1" />
       <PackageReference Include="FsToolkit.ErrorHandling" Version="4.18.0" />
     </ItemGroup>
 
