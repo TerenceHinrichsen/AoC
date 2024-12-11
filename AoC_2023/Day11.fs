@@ -62,7 +62,7 @@ module Day11
          |> List.map (fun (x,y) -> x, y, isColumnEmpty y)
 
       rowL
-      |> List.iter (fun (rowIndex, rowValues, isEmpty) -> printfn $"Row    {rowIndex} Contains: {rowValues}: IsEmpty {isEmpty}")
+      |> List.iter (fun (rowIndex, rowValues) -> printfn $"Row    {rowIndex} Contains: {rowValues}:")
 
       columnL
       |> List.iter (fun (columnIndex,columnValues, isEmpty) -> printfn $"Column {columnIndex} Contains: {columnValues}: IsEmpty: {isEmpty}")
