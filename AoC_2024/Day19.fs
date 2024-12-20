@@ -29,32 +29,32 @@ module Day19
          input
          |> List.skip 2
 
-      let rec possibleOptions design acc =
+      let mutable cache : Map<string, int64> = Map.empty
+
+      let rec possibleOptions design =
          if design = "" then
-            1L, acc
+            1L
          else
-            match Map.tryFind design acc with
-            | Some result -> result, acc
+            match Map.tryFind design cache with
+            | Some result -> result
             | None ->
                let result =
                   patterns
                   |> Seq.filter (fun p -> design.StartsWith(p))
-                  |> Seq.sumBy (fun p -> possibleOptions (design.Substring(p.Length)) acc  |> fst)
-               let newAcc =
-                  acc
-                  |> Map.add design result
-               result, newAcc
+                  |> Seq.sumBy (fun p -> possibleOptions (design.Substring(p.Length)))
+               cache <- Map.add design result cache
+               result
 
       let possibleCount =
          designs
-         |> List.filter (fun d -> possibleOptions d Map.empty |> fst > 0)
+         |> List.filter (fun d -> possibleOptions d > 0)
          |> List.length
 
       printfn $"Possible: {possibleCount}"
 
       let possibleCountSum =
          designs
-         |> List.sumBy (fun x ->  (possibleOptions x Map.empty) |> fst)
+         |> List.sumBy possibleOptions
 
       printfn $"Possible options: {possibleCountSum}"
 
