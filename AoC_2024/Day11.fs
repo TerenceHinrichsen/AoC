@@ -3,6 +3,7 @@ module Day11
    open AdventOfCode
    open System
    open System.Text.RegularExpressions
+   open System.Threading.Tasks
 
    let sampleInput = seq [
       "125 17"
@@ -52,34 +53,33 @@ module Day11
 
       printfn $"After 25 blinks, there are {part1.Length} stones"
 
-      printfn "Part 2, fold does not work, lets try recursion."
-
-      let applyRulesV2 (number : int64) =
+      let applyRulesV2 (number: int64) =
          match number with
-         | 0L ->
-            seq [1L]
-         | _  ->
+         | 0L -> [1L]
+         | _ ->
             let digits = number.ToString().ToCharArray()
             if digits.Length % 2 = 0 then
                let half = digits.Length / 2
                let first = String(digits[0..half-1]) |> int64
                let second = String(digits[half..]) |> int64
-               seq [first; second]
+               [first; second]
             else
-               seq [number * 2024L]
+               [number * 2024L]
 
-      let rec blink iterations currentList =
-         if iterations = 0 then
-            currentList
-         else
-            let newList =
-               currentList
-               |> Seq.collect applyRulesV2
-            blink (iterations - 1) newList
-
-      let part2 = blink 75 (digitList |> List.toSeq)
-
-      part2 |> Seq.toList |> List.length
-      |> fun x -> printfn $"After 75 blinks, there are {x} stones"
+//      let rec iterateSingleStone (stoneL: List<int>) iterations =
+//         if iterations = 0 then
+//            stoneL
+//         else
+//            let newStoneL =
+//               List.map (fun x -> applyRulesV2 x)
+//               iterateSingleStone (newStone |> List.head) (iterations - 1)
+//            ()
+//
+//      let attempt10 =
+//         digitList
+//         |> List.toArray
+//         |> Array.Parallel.map (fun stone -> iterateSingleStone stone 75)
+//
+//      printfn $"Part 2: After 75 blinks, there are {attempt10 |> Array.sum} stones"
 
       ()
