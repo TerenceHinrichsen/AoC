@@ -6,6 +6,6 @@ open System
 [<EntryPoint>]
 let main argv =
 
-   Day23.run
+   Day24.run
 
    0 // return an integer exit code
